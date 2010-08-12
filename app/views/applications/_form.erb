@@ -1,0 +1,19 @@
+ <br />
+
+ <%= form.hidden_field(:job_id, :value => @job.id) %>
+ <%= form.hidden_field(:email, :value => current_user.email) %>
+
+  <div class="form_row">
+    <%= form.label :comment %>
+    <%= form.text_area :comment, :size => "35" %>
+  </div>
+
+  <div class="form_row">
+    <label>Upload Your CV</label>
+    <%= form.file_field :data %>
+  </div>
+
+  <div class="form_row">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>

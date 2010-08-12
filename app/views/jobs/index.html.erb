@@ -1,0 +1,54 @@
+<h1>Listing jobs</h1>
+<fieldset>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="10">Title</th>
+    <th width="20">Description</th>
+    <th width="20">Country</th>
+    <th width="10">City</th>
+    <th width="10">Type</th>
+    <th width="20">Currency</th>
+    <th width="20">Rate</th>
+    <th width="20">Start date</th>
+    <th width="20">End date</th>
+    <th width="30">Skills</th>
+    <th width="10">Status</th>
+    <th width="10"></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    
+    <td><%=h link_to job.title, job %></td>
+    <td><%=h job.description %></td>
+    <td><%=h job.country.name %></td>
+    <td><%=h job.city %></td>
+    <td><%=h job.type.name %></td>
+    <td><%=h job.currency.name %></td>
+    <td><%=h job.rate.name %></td>
+    <td><%=h job.start_date %></td>
+    <td><%=h job.end_date %></td>
+    <td><% job.skills.each do |t| %>
+         <%=h t.name %>
+         <% end %></td>
+    <td><% if job.status? %>
+        Active
+        <% else %>
+        Close
+        <% end %></td>
+        <td>
+        <% if job.status? %>
+        <%= link_to "Apply", new_application_url(:id => job.id) %>
+          <% end %>
+        </td>
+
+  </tr>
+<% end %>
+ 
+</table>
+
+<br />
+<b><%= will_paginate @jobs %></b>
+<div class="clear"></div>
+</fieldset>
+<%= link_to 'New job', new_job_path %>

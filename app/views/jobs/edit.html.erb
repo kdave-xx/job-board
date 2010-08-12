@@ -1,0 +1,52 @@
+<h1>Editing job</h1>
+
+<% form_for(@job) do |f| %>
+  <%= f.error_messages %>
+<fieldset>
+  <legend>Edit Your Details</legend>
+  <br />
+  <br />
+  <div class="form_row">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form_row">
+    <%= f.label :description %>
+    <%= f.text_area :description, :size => "35" %>
+  </div>
+  <div class="form_row">
+    <%= f.label :country %>
+     <%= f.select(:country_id, Country::NAMES, {:prompt => "#{@job.country.name}" }) %>
+  </div>
+  <div class="form_row">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="form_row">
+    <%= f.label :type %>
+     <%= f.select(:type_id, Type::NAMES, {:prompt => "#{@job.type.name}" }) %>
+  </div>
+  <div class="form_row">
+    <%= f.label :currency %>
+    <%= f.select(:currency_id, Currency::NAMES, { :prompt => "#{@job.currency.name}" }) %>
+  </div>
+  <div class="form_row">
+    <%= f.label :rate %>
+    <%= f.select(:rate_id, Rate::NAMES, { :prompt => "#{@job.rate.name}" }) %>
+  </div>
+  <div class="form_row">
+    <%= f.label :start_date %>
+    <%= f.calendar_date_select :start_date %>
+  </div>
+  <div class="form_row">
+    <%=  f.label :end_date %>
+    <%= f.calendar_date_select :end_date %>
+  </div>
+  <div class="form_row">
+    <%= f.submit 'Update', :class=>"submit" %>
+  </div>
+  </fieldset>
+<% end %>
+
+<%= link_to 'Show', @job %> |
+<%= link_to 'Back', jobs_path %>

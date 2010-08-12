@@ -1,0 +1,77 @@
+<fieldset>
+  <legend>Job Detail</legend>
+  <br /><br />
+<div class="form_row">
+  <b>Title:</b>
+  <%=h @dashboard.title %>
+</div>
+
+<div class="form_row">
+  <b>Description:</b>
+  <%=h @dashboard.description %>
+</div>
+
+<div class="form_row">
+  <b>Country:</b>
+  <%=h @dashboard.country.name %>
+</div>
+
+<div class="form_row">
+  <b>City:</b>
+  <%=h @dashboard.city %>
+</div>
+
+<div class="form_row">
+  <b>Type:</b>
+  <%=h @dashboard.type.name %>
+</div>
+
+<div class="form_row">
+  <b>Currency:</b>
+  <%=h @dashboard.currency.name %>
+</div>
+
+<div class="form_row">
+  <b>Rate:</b>
+  <%=h @dashboard.rate.name %>
+</div>
+
+<div class="form_row">
+  <b>Start date:</b>
+  <%=h @dashboard.start_date %>
+</div>
+
+<div class="form_row">
+  <b>End date:</b>
+  <%=h @dashboard.end_date %>
+</div>
+
+<div class="form_row">
+  <b>Skills:</b>
+  <% @dashboard.skills.each do |t| %>
+  <%=h t.name %>
+  <% end %>
+</div>
+</fieldset>
+
+<fieldset>
+  <legend>List of Job Applicants</legend>
+  <br /><br />
+  <% if @applicants.blank? %>
+  <b>There Are No Applicants Applied For This Job Yet.</b>
+  <% else %>
+  <% @applicants.each do |applicant| %>
+  <div class="form_row">
+    <b>Comment:</b>
+    <%=h applicant.comment %>
+  </div>
+  <div class="form_row">
+    <b>Linkedin URL:</b>
+    <%=h applicant.url %>
+  </div>
+  <% end %>
+  <% end %>
+  </fieldset>
+
+<%#= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', admin_dashboard_index_path %>

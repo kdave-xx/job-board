@@ -1,0 +1,44 @@
+  <br /> 
+  <div class="form_row">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="form_row">
+    <%= form.label :description %>
+    <%= form.text_area :description, :size => "35" %>
+  </div>
+  <div class="form_row">
+    <%= form.label :country %>
+    <%= form.select(:country_id, Country::NAMES, {:prompt => 'Select Country' }) %>
+  </div>
+  <div class="form_row">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+  <div class="form_row">
+    <%= form.label :type %>
+    <%= form.select(:type_id, Type::NAMES, {:prompt => 'Select Job Type' }) %>
+  </div>
+  <div class="form_row">
+    <%= form.label :currency %>
+    <%= form.select(:currency_id, Currency::NAMES, { :prompt => 'Select Currency' }) %>
+  </div>
+  <div class="form_row">
+    <%= form.label :rate %>
+    <%= form.select(:rate_id, Rate::NAMES, { :prompt => 'Select Rate' }) %>
+  </div>
+  <div class="form_row">
+    <%= form.label :start_date %>
+    <%= form.calendar_date_select :start_date %>
+  </div>
+  <div class="form_row">
+    <%= form.label :end_date %>
+    <%= form.calendar_date_select :end_date %>
+  </div>
+  <div class="form_row" style="text-align: justify;" >
+    <%= form.label :skill %><br />
+    <% @skills.each do |s| %>
+      <%= check_box_tag "job[skill_ids][]", "#{s.id}", skill(s) %>
+      <%= "#{s.name}" %><br />
+    <% end %>
+  </div>

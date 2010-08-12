@@ -1,0 +1,31 @@
+.pagination a, .pagination span{
+    border:1px solid #DDD9C3;
+    color:#666666;
+    float:left;
+    height:15px;
+    padding:2px 5px;
+    text-decoration:none;
+    width:auto;
+    margin: 0 2px;
+}
+.pagination .disabled, .pagination .current{
+    border:1px solid #DDD9C3;
+    background-color: #333;
+    color:#fff;
+    float:left;
+    height:15px;
+    padding:2px 5px;
+    text-decoration:none;
+    width:auto;
+    margin: 0 2px;
+}
+.pagination a:hover{
+    color:#fff;
+    background-color: #333;
+}
+.clear{
+    clear: both;
+}
+tr td,tr th{
+    border-bottom: 1px solid #333
+}

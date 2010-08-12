@@ -1,0 +1,515 @@
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:53:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Redirected to http://localhost:3000/admin
+Filter chain halted as [:require_admin_user] rendered_or_redirected.
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/admin/dashboard]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-10 18:53:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 38ms (View: 16, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-10 18:53:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 418ms (View: 16, DB: 8) | 200 OK [http://localhost/user_session]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-10 18:54:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 51ms (View: 35, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 18:54:06) [GET]
+
+ActionController::RoutingError (No route matches "/adin" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-10 18:54:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 60ms (View: 33, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-10 18:54:18) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/admin/dashboard
+Completed in 590ms (DB: 22) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:54:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 255ms (View: 34, DB: 3) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:54:30) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"india"}
+
+NoMethodError (undefined method `find_by_solr' for #<Class:0xb6ef7d04>):
+  app/controllers/admin/dashboard_controller.rb:7:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-10 18:56:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 277ms (View: 244, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:56:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 224ms (View: 45, DB: 6) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:56:47) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"india"}
+
+NoMethodError (undefined method `find_by_solr' for #<Class:0xb7031cec>):
+  app/controllers/admin/dashboard_controller.rb:7:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-10 18:58:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 204ms (View: 188, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:58:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 199ms (View: 15, DB: 2) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:58:29) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"india"}
+
+NoMethodError (undefined method `find_by_solr' for #<Class:0xb6f2cc20>):
+  app/controllers/admin/dashboard_controller.rb:7:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:59:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 219ms (View: 33, DB: 3) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 18:59:29) [GET]
+  Parameters: {"commit"=>"Go", "search"=>"india"}
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 18:59:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 205ms (View: 40, DB: 2) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 18:59:55) [GET]
+  Parameters: {"commit"=>"Go", "search"=>"india"}
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 19:00:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 234ms (View: 34, DB: 3) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 19:00:20) [GET]
+  Parameters: {"commit"=>"Go", "search"=>"india"}
+
+ActionController::RoutingError (No route matches "/admin/admin/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 19:01:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 229ms (View: 36, DB: 3) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 19:01:20) [GET]
+  Parameters: {"commit"=>"Go", "search"=>"india"}
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 19:01:53) [GET]
+  Parameters: {"commit"=>"Go", "search"=>"india"}
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 19:05:13) [GET]
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 19:05:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 217ms (View: 28, DB: 8) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 19:05:26) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"india"}
+
+NoMethodError (undefined method `find_by_solr' for #<Class:0xb7011ce4>):
+  app/controllers/admin/dashboard_controller.rb:7:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-10 19:05:52) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"india"}
+
+NoMethodError (undefined method `find_by_solr' for #<Class:0xb7011ce4>):
+  app/controllers/admin/dashboard_controller.rb:7:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 19:07:21) [GET]
+
+ActionController::RoutingError (No route matches "/feedlists/1-admin/rss.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:13:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 42ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-08-11 12:13:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"jobs"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/jobs/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:13:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 49ms (View: 24, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-11 12:13:54) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"kalpesh"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 394ms (View: 26, DB: 25) | 200 OK [http://localhost/user_session]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:13:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 112ms (View: 80, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:15:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 66ms (View: 53, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:15:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 65ms (View: 57, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:16:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 75ms (View: 56, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:21:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 72ms (View: 55, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:22:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 66ms (View: 55, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:23:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 69ms (View: 56, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:23:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 60ms (View: 55, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:23:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 67ms (View: 61, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:24:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 70ms (View: 60, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-11 12:25:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 68ms (View: 47, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:25:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 71ms (View: 56, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-11 12:25:21) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/jobs/new
+Completed in 602ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-08-11 12:25:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/new
+Completed in 392ms (View: 97, DB: 8) | 200 OK [http://localhost/jobs/new]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-11 12:25:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+
+ActionView::TemplateError (undefined method `total_pages' for []:Array) on line #49 of app/views/admin/dashboard/index.html.erb:
+46: </table>
+47: 
+48: <br />
+49: <b><%= will_paginate @jobs %></b>
+50: <div class="clear"></div>
+
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.14/lib/will_paginate/view_helpers.rb:201:in `total_pages_for_collection'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.14/lib/will_paginate/view_helpers.rb:98:in `will_paginate'
+    app/views/admin/dashboard/index.html.erb:49
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:25:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 275ms (View: 269, DB: 4) | 200 OK [http://localhost/jobs]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-08-11 12:26:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/new
+Completed in 397ms (View: 144, DB: 10) | 200 OK [http://localhost/jobs/new]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:27:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 350ms (View: 293, DB: 55) | 200 OK [http://localhost/jobs]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:27:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 295ms (View: 286, DB: 7) | 200 OK [http://localhost/jobs]
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:48:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 44ms (View: 28, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-08-11 12:48:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"jobs"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 33ms (DB: 5) | 302 Found [http://localhost/jobs/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:48:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 48ms (View: 20, DB: 3) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-11 12:48:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/jobs/new
+Completed in 644ms (DB: 58) | 302 Found [http://localhost/user_session]
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-08-11 12:48:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/new
+Completed in 310ms (View: 114, DB: 10) | 200 OK [http://localhost/jobs/new]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-08-11 12:48:28) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/login
+Completed in 201ms (DB: 6) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:48:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:48:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 59ms (View: 55, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-11 12:48:40) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/admin/dashboard
+Completed in 187ms (DB: 5) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-11 12:48:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 371ms (View: 25, DB: 9) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-11 12:48:46) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"a"}
+
+NoMethodError (undefined method `paginate' for #<ActsAsSolr::SearchResults:0xb6e36c80>):
+  app/controllers/admin/dashboard_controller.rb:12:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-11 12:49:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/dashboard"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 234ms (View: 23, DB: 4) | 200 OK [http://localhost/admin/dashboard]
+
+
+Processing Admin::DashboardController#index (for 127.0.0.1 at 2010-08-11 12:49:23) [GET]
+  Parameters: {"commit"=>"Go", "action"=>"index", "controller"=>"admin/dashboard", "search"=>"a"}
+Rendering template within layouts/admin
+Rendering admin/dashboard/index
+Completed in 1590ms (View: 27, DB: 10) | 200 OK [http://localhost/admin/dashboard?search=a&commit=Go]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-11 12:52:01) [GET]
+
+ActionController::RoutingError (No route matches "/feedlists/1-admin/rss.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-08-11 12:56:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"jobs"}
+Rendering template within layouts/application
+Rendering jobs/index
+Completed in 249ms (View: 222, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-08-11 12:57:00) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+sLFpNy10+mwknrc+1kWH4XIoTGmpGQw6Ya1YB7tYZc=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/login
+Completed in 195ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-11 12:57:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 34ms (View: 26, DB: 0) | 200 OK [http://localhost/login]

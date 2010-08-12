@@ -1,0 +1,20 @@
+<h1>Editing application</h1>
+
+<% form_for(@application) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @application %> |
+<%= link_to 'Back', applications_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  country_id: 1
+  city: MyString
+  type_id: 1
+  currency_id: 1
+  rate_id: 1
+  start_date: 2010-08-05
+  end_date: 2010-08-05
+
+two:
+  title: MyString
+  description: MyText
+  country_id: 1
+  city: MyString
+  type_id: 1
+  currency_id: 1
+  rate_id: 1
+  start_date: 2010-08-05
+  end_date: 2010-08-05
