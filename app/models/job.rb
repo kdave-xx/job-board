@@ -10,10 +10,7 @@ class Job < ActiveRecord::Base
   has_many :applications
   has_many :applicants, :through => "application"
 
-  validates_presence_of :title
-  validates_presence_of :city
-  validates_presence_of :start_date
-  validates_presence_of :end_date
-
- 
+  validates_presence_of :title, :city, :start_date, :end_date
+  validates_format_of :title, :with => /[A-Za-z0-9]+/, :on => :create
+   
 end
