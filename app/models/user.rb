@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :jobs
 
-  validates_uniqueness_of :login, :email
   validates_presence_of :login, :email, :password
   validates_length_of :login, :within => 6..32
   validates_length_of :password, :maximum => 32
