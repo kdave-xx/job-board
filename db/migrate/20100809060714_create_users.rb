@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :password_salt,       :null => false
       t.string    :persistence_token,   :null => false
       t.string    :single_access_token, :null => false
-      t.string    :perishable_token,    :null => false
+      t.string    :perishable_token,   :default => "", :null => false
       t.integer   :login_count,         :null => false, :default => 0
       t.integer   :failed_login_count,  :null => false, :default => 0
       t.datetime  :last_request_at
