@@ -12,4 +12,14 @@ class Mailer < ActionMailer::Base
 #    @body[:application] = application
   end
 
+   def password_reset_instructions(user)
+    subject      "Password Reset Instructions"
+    from         "no-replayfourthmedia.co.uk"
+    recipients   user.email
+    content_type "text/html"
+    sent_on      Time.now
+    body         :edit_password_reset_url => edit_password_reset_url(user.perishable_token)
+  end
+
+
 end
