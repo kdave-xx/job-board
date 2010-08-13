@@ -17,7 +17,7 @@
     <div id="header">Job Board - Admin Area</div>
 
 <div id="nav">
-<%= link_to "All Jobs", jobs_path %> |
+<%= link_to "All Jobs", admin_dashboard_index_path %> |
 <% if !current_user %>
   <%= link_to "Register", signup_path %> |
   <%= link_to "Log In", login_path %> |
