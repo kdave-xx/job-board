@@ -4,7 +4,11 @@ class JobsController < ApplicationController
    
 
   def index
-    @jobs = Job.find(:all)
+    if current_user
+      @jobs = Job.find(:all) - Job.find_all_by_id(current_user.id)
+    else
+      @jobs = Job.find(:all)
+    end
     change_state(@jobs)
     @jobs = @jobs.paginate :page => params[:page], :per_page => 10
     respond_to do |format|

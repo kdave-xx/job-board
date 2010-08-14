@@ -33,7 +33,7 @@
   </div>
   <div class="form_row">
     <%= form.label :end_date %>
-    <%= form.calendar_date_select :end_date %>
+    <%= form.calendar_date_select :end_date, :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
   </div>
   <div class="form_row" style="text-align: justify;" >
     <%= form.label :skill %><br />

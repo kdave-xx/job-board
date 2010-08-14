@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    
+    if @user.errors.empty? && @user.save
       flash[:notice] = "Successfully registered!"
       redirect_back_or_default jobs_url
     else
