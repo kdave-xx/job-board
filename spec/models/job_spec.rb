@@ -41,5 +41,6 @@ describe Job do
   it {should validate_presence_of :city}
   it {should validate_presence_of :start_date}
   it {should validate_presence_of :end_date}
+  it {should validate_format_of(:title).with('/[A-Za-z0-9]+/')}
 
 end

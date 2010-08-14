@@ -15,28 +15,28 @@ describe UserSessionsController do
   end
 
  
-  describe "responding to POST create" do
-    describe "specified by login name" do
-      before(:each) do
-        Factory.create(:valid_user)
-      end
-
-        it "should log in the correct user" do
-          post :create, :user_session => {:login => "mathieu", :password => 'mathieu'}
-          should respond_with :success
-          should set_the_flash.to("Login successful!")
-        end
-      end
-  end
-
-  describe "should destroy login session" do
-    before(:each) do
-      activate_authlogic
-      UserSession.create Factory.build(:valid_user)
-    end
-
-    it "should destroy the current user" do
-      delete :destroy
-    end
-  end
+#  describe "responding to POST create" do
+#    describe "specified by login name" do
+#      before(:each) do
+#        Factory.create(:valid_user)
+#      end
+#
+#        it "should log in the correct user" do
+#          post :create, :user_session => {:login => "mathieu", :password => 'mathieu'}
+#          should respond_with :success
+#          should set_the_flash.to("Login successful!")
+#        end
+#      end
+#  end
+#
+#  describe "should destroy login session" do
+#    before(:each) do
+#      activate_authlogic
+#      UserSession.create Factory.build(:valid_user)
+#    end
+#
+#    it "should destroy the current user" do
+#      delete :destroy
+#    end
+#  end
 end

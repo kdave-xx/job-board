@@ -1,8 +1,9 @@
 Factory.define :valid_user , :class => User do |u|
-  u.login "mathieu"
-  u.password "mathieu"
-  u.password_confirmation "mathieu"
-  u.email "mathieu@fourthmedia.co.uk"
+  u.login "kalpesh"
+  u.email "kdave@fourthmedia.co.uk"
+  u.password "123123"
+  u.password_confirmation "123123"
+  u.perishable_token "mGyffCmtFALP8SvRtXkW"
   u.single_access_token "k3cFzLIQnZ4MHRmJvJzg"
 end
 

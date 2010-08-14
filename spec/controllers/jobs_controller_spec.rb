@@ -6,28 +6,28 @@ describe JobsController do
 #    @mock_job ||= mock_model(Job, stubs)
 #  end
 
-  describe "GET index" do
-    before(:each) do
-      @job = Factory.create(:valid_user)
-    end
-    it "assigns all jobs as @jobs" do
-      Job.stub(:find).with(:all).and_return(@job)
-      get :index
-      assigns[:jobs].should == @job
-    end
-  end
-#
-  describe "GET show" do
-    before(:each) do
-      @job = Factory.create(:valid_user)
-    end
-    it "assigns the requested job as @job" do
-      Job.stub(:find).with("mathieu").and_return(@job)
-      get :show, :login => "mathieu"
-      assigns[:job].should equal(@job)
-    end
-  end
-#
+#  describe "GET index" do
+#    before(:each) do
+#      @job = Factory.create(:valid_user)
+#    end
+#    it "assigns all jobs as @jobs" do
+#      Job.stub(:find).with(:all).and_return(@job)
+#      get :index
+#      assigns[:jobs].should == @job
+#    end
+#  end
+##
+#  describe "GET show" do
+#    before(:each) do
+#      @job = Factory.create(:valid_user)
+#    end
+#    it "assigns the requested job as @job" do
+#      Job.stub(:find).with("kalpesh").and_return(@job)
+#      get :show
+#      assigns[:job].should equal(@job)
+#    end
+#  end
+##
 #  describe "GET new" do
 #    it "assigns a new job as @job" do
 #      Job.stub(:new).and_return(mock_job)
