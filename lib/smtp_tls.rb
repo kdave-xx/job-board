@@ -7,9 +7,15 @@ Net::SMTP.class_eval do
     raise IOError, 'SMTP session already started' if @started
     if RAILS_ENV.eql?("development")
       check_auth_args user, secret
+       elsif RUBY_VERSION > "1.8.6"
+      check_auth_args user, secret # for rails 1.8.7
     else
-      check_auth_args user, secret, authtype if user or secret
+      check_auth_args user, secret, authtype if user or secret # for rails 1.8.6
+      #check_auth_args user, secret, authtype if user or secret
     end
+#    else
+#      check_auth_args user, secret, authtype if user or secret
+#    end
 
     sock = timeout(@open_timeout) { TCPSocket.open(@address, @port) }
     @socket = Net::InternetMessageIO.new(sock)
