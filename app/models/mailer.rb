@@ -1,15 +1,21 @@
 class Mailer < ActionMailer::Base
 
-   def application_instructions(applicantion)
+   def application_instructions(application)
     subject       "Job Board Application Instructions"
     from          "no-reply@fourthmedia.co.uk"
-    recipients    applicantion.email
+    recipients    application.email
     sent_on       Time.now
     @content_type = "text/html"
-#    body          :email                  => user.email
-#    body          :account_activation_url => register_url(user.perishable_token)
-#    @body[:an_url] = register_url(user.perishable_token)
-#    @body[:application] = application
+
+  end
+
+   def jobowner_instructions(application)
+    subject       "Job Board Application Instructions"
+    from          "no-reply@fourthmedia.co.uk"
+    recipients    application.job.user.email
+    sent_on       Time.now
+    @content_type = "text/html"
+
   end
 
    def password_reset_instructions(user)

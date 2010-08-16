@@ -19,7 +19,8 @@ class ApplicationsController < ApplicationController
     
     respond_to do |format|
       if @application.save
-         @application.deliver_application_instructions!
+        @application.deliver_application_instructions!
+        @application.deliver_jobowner_instructions!
         format.html { redirect_to(@application, :notice => 'Application was successfully created.') }
         format.xml  { render :xml => @application, :status => :created, :location => @application }
       else

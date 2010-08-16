@@ -8,9 +8,13 @@ class Application < ActiveRecord::Base
 
 #  validates_attachment_presence :data
   validates_attachment_size :data, :less_than => 5.megabytes
-  validates_attachment_content_type :data, :content_type => ['application/pdf', 'text/plain']
+  validates_attachment_content_type :data, :content_type => ['application/msword', 'application/octet-stream', "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 'application/pdf', 'text/plain']
 
    def deliver_application_instructions!
      Mailer.deliver_application_instructions(self)
+   end
+
+   def deliver_jobowner_instructions!
+     Mailer.deliver_jobowner_instructions(self)
    end
 end
