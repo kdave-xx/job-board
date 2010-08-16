@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   def index
     if current_user
-      @jobs = Job.find(:all) - Job.find_all_by_id(current_user.id)
+      @jobs = Job.all - Job.find_all_by_user_id(current_user)
     else
       @jobs = Job.find(:all)
     end
