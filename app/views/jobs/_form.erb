@@ -28,12 +28,14 @@
     <%= form.select(:rate_id, Rate::NAMES, { :prompt => 'Select Rate' }) %>
   </div>
   <div class="form_row">
-    <%= form.label :start_date %>
-    <%= form.calendar_date_select :start_date %>
+    <%= form.label :start_date %>&nbsp;
+    <span id='cds_value1' />
+    <%= form.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));" %>
   </div>
   <div class="form_row">
-    <%= form.label :end_date %>
-    <%= form.calendar_date_select :end_date, :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
+    <%= form.label :end_date %>&nbsp;
+    <span id='cds_value2' />
+    <%= form.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));" %>
   </div>
   <div class="form_row" style="text-align: justify;" >
     <%= form.label :skill %><br />
