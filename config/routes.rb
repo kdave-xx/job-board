@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :applications
   map.resources :password_resets, :only => [ :new, :create, :edit, :update ]
 
-   map.resources :jobs
+  map.resources :jobs
   map.resource :user_session
  # map.root :controller => "user_sessions", :action => "new"
   map.resources :users
@@ -11,7 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => "users", :action => "new"
   map.login '/login', :controller => "user_sessions", :action => "new"
   map.admin '/admin', :controller => "user_sessions", :action => "new"
- 
+
+  map.detail '/detail/:id', :controller => "jobs", :action => "detail"
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

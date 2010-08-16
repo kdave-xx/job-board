@@ -19,7 +19,7 @@
 
 <% current_user.jobs.each do |job| %>
   <tr>
-    <td><%=h link_to job.title.capitalize, job %></td>
+    <td><%=h link_to job.title.capitalize, detail_path(job) %></td>
     <td><%=h job.description %></td>
     <td><%=h job.country.name %></td>
     <td><%=h job.city %></td>

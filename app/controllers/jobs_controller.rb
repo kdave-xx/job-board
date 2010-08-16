@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   # before_filter :require_no_user, :only => [:index]
-   before_filter :require_user, :only => [:new, :edit, :update, :destroy, :apply]
+   before_filter :require_user, :only => [:new, :edit, :update, :destroy, :apply, :detail]
    
 
   def index
@@ -25,12 +25,16 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @applicants = @job.applications.find(:all)
    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @job }
     end
+  end
+
+  def detail
+    @job = Job.find(params[:id])
+    @applicants = @job.applications.find(:all)
   end
 
   # GET /jobs/new
