@@ -29,12 +29,12 @@
   </div>
   <div class="form_row">
     <%= form.label :start_date %>&nbsp;
-    <%= form.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));" %>
+    <%= form.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));", :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
     <span id='cds_value1' />
   </div>
   <div class="form_row">
     <%= form.label :end_date %>&nbsp;
-    <%= form.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));" %>
+    <%= form.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));", :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
     <span id='cds_value2' />
   </div>
   <div class="form_row" style="text-align: justify;" >

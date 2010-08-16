@@ -37,13 +37,13 @@
   <div class="form_row">
     <%= f.label :start_date %>&nbsp;
      <span id='cds_value1' ><%= @job.start_date %></span>
-    <%= f.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));" %>
+    <%= f.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));", :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
     
   </div>
   <div class="form_row">
     <%=  f.label :end_date %>&nbsp;
     <span id='cds_value2'><%= @job.end_date %></span>
-    <%= f.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));" %>
+    <%= f.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));", :valid_date_check => "date.stripTime() >= (new Date()).stripTime()" %>
   </div>
   <div class="form_row">
     <%= f.submit 'Update', :class=>"submit" %>
