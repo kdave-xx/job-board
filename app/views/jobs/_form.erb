@@ -29,13 +29,13 @@
   </div>
   <div class="form_row">
     <%= form.label :start_date %>&nbsp;
-    <span id='cds_value1' />
     <%= form.calendar_date_select :start_date, :hidden => "true", :onchange => "$('cds_value1').update($F(this));" %>
+    <span id='cds_value1' />
   </div>
   <div class="form_row">
     <%= form.label :end_date %>&nbsp;
-    <span id='cds_value2' />
     <%= form.calendar_date_select :end_date, :hidden => "true", :onchange => "$('cds_value2').update($F(this));" %>
+    <span id='cds_value2' />
   </div>
   <div class="form_row" style="text-align: justify;" >
     <%= form.label :skill %><br />
