@@ -26,11 +26,11 @@ class Admin::DashboardController < ApplicationController
   end
 
     def update
-    @dashboard = Job.find(params[:id])
-
+    @job = Job.find(params[:id])
+#    raise @job.inspect
     respond_to do |format|
-      if @dashboard.update_attributes(params[:dashboard])
-        format.html { redirect_to( admin_dashboard_index_url, :notice => 'Dashboardb was successfully updated.') }
+      if @job.update_attributes(params[:job])
+        format.html { redirect_to(admin_dashboard_index_path, :notice => 'Dashboardb was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

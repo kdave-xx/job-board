@@ -1,6 +1,6 @@
 <h1>Editing job</h1>
 
-<% form_for(@dashboard) do |f| %>
+<% form_for @dashboard, :url => admin_dashboard_url do |f| %>
   <%= f.error_messages %>
 <fieldset>
   <legend>Edit Your Details</legend>
