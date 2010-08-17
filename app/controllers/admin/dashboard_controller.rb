@@ -22,7 +22,7 @@ class Admin::DashboardController < ApplicationController
   end
 
    def edit
-    @dashboard = Job.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
     def update
