@@ -20,10 +20,12 @@
   <%= link_to_unless_current "All Jobs", jobs_path %> |
   <%= link_to_unless_current "Register", signup_path %> |
   <%= link_to_unless_current "Log In", login_path %> |
+  <%= link_to_unless_current "Post A Job", new_job_path %>
 <% else %>
   Welcome <%= current_user.login.capitalize %> |
   <%= link_to_unless_current "All Jobs", jobs_path %> |
   <%= link_to_unless_current "My Jobs", myjobs_path %> |
+  <%= link_to_unless_current "Post A Job", new_job_path %> |
   <%= link_to_unless_current "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
 <% end %>
 </div>
