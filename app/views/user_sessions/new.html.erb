@@ -16,18 +16,18 @@
   </div>
  
   <div class="form_row">
-   <label for="password">Remember Me:</label>
+   <label for="password">Stay signed in </label>
     <%= f.check_box :remember_me %>
   </div> 
   <br />
    <div class="form_row">
-  <%= f.submit "Login", :class => "submit" %>
+  <%= f.submit "Sign in", :class => "submit" %>
    </div>
 
  
   <div style="margin-left: 30px;">
-    <%= link_to "Forgot Password", new_password_reset_url  %><br />
-    <%= link_to "User Registration", new_user_path %>
+    <%= link_to "Can't access your account?", new_password_reset_url  %><br />
+    <%= link_to "Create a new account", new_user_path %>
   </div>
 
 </fieldset>
