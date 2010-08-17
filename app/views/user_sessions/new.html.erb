@@ -1,10 +1,16 @@
 <h1>Login</h1>
-
+<fieldset>
+  
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
-<fieldset>
+
 <legend>Enter Your Details</legend>
-<br />
+<br /><br />
+
+<table width="100%" border="0px">
+  <tr>
+    <td width="50%">
+<div class="left">
 <div class="form_row">
   <label for="login">Login:</label>
   <%= f.text_field :login %>
@@ -23,14 +29,18 @@
    <div class="form_row">
   <%= f.submit "Sign in", :class => "submit" %>
    </div>
-
- 
-  <div style="margin-left: 30px;">
-    <%= link_to "Can't access your account?", new_password_reset_url  %><br />
-    <%= link_to "Create a new account", new_user_path %>
-  </div>
-
-</fieldset>
+ <div style="margin-left: 30px;">
+    <%= link_to "Forget password", new_password_reset_url  %><br />
+ </div>
+</div>
+    </td>
 <% end %>
+    <td width="50%">
+      <h3>As a job owner to create a new account?</h3>
+    <%= link_to "Click here", new_user_path %>
 
- 
+    </td>
+  </tr>
+</table>
+  
+</fieldset>
