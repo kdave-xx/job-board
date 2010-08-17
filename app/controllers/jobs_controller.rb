@@ -60,9 +60,11 @@ class JobsController < ApplicationController
     
     @job = Job.new(params[:job])
     @job.user_id = current_user.id
-    
+    if @job.start_date > @job.end_date
+      @job.errors.add :end_date, "should be greater than start date"
+    end
     respond_to do |format|
-      if @job.save
+      if @job.errors.empty? && @job.save
         format.html { redirect_to(@job, :notice => 'Job was successfully created.') }
         format.xml  { render :xml => @job, :status => :created, :location => @job }
       else
@@ -78,8 +80,10 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
 
+   
     respond_to do |format|
       if @job.update_attributes(params[:job])
+
         format.html { redirect_to(@job, :notice => 'Job was successfully updated.') }
         format.xml  { head :ok }
       else
