@@ -1,10 +1,16 @@
 <p>Dear Applicant,
 <br /><br />
-Thank you for Applying For The job on job board System.
+Thank you for applying for the job on job board system.
 </p><br />
 
 
-<b>Applicant Details Goes Below:</b> <br />
-<b>Applicant's Email Address:</b> &nbsp;<%= @applicant.email %><br />
-<b>Comment:</b> &nbsp;<%= @applicant.comment %><br />
-<b>Linkedin URL:</b> &nbsp;<%= @applicant.url %><br />
+<b>Job Details Goes Below:</b> <br />
+<b>Job Title:</b> &nbsp;<%= @applicant.job.title %><br />
+<b>Description:</b> &nbsp;<%= @applicant.job.description %><br />
+<b>Country:</b> &nbsp;<%= @applicant.job.country.name %><br />
+<b>City:</b> &nbsp;<%= @applicant.job.city %><br />
+<b>Type:</b> &nbsp;<%= @applicant.job.type.name %><br />
+<b>Currency:</b> &nbsp;<%= @applicant.job.currency.name %><br />
+<b>Skills:</b> &nbsp;<% @applicant.job.skills.each do |t| %><%= t.name %><% end %><br />
+<b>Start Date:</b> &nbsp;<%= @applicant.job.start_date %><br />
+<b>End Date:</b> &nbsp;<%= @applicant.job.end_date %><br />
