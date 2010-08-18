@@ -1,10 +1,9 @@
 <p>Dear Job Owner,
-<br><br>
+<br /><br />
 A User has Applied For The job on job board System.
-<br><br>
-User E-mail Address: <%#= application.email %>
+</p><br />
 
-If the above link does not work, copy & paste the following link in your browser and log in using the details provided above.
-
-Thank you for using DOIT Success System and if you have any comments or just want to send a note, email us. We like to hear from you.
-
+<b>Applicant Details Goes Below:</b> <br />
+<b>Applicant's Email Address:</b> &nbsp;<%= @applicant.email %><br />
+<b>Comment:</b> &nbsp;<%= @applicant.comment %><br />
+<b>Linkedin URL:</b> &nbsp;<%= @applicant.url %><br />
