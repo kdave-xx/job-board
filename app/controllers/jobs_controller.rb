@@ -60,8 +60,8 @@ class JobsController < ApplicationController
     
     @job = Job.new(params[:job])
     @job.user_id = current_user.id
-    if @job.start_date > @job.end_date
-      @job.errors.add :end_date, "should be greater than start date"
+    if @job.start_date >= @job.end_date
+      @job.errors.add :end_date, "should not be less than or equal to start_date"
     end
     respond_to do |format|
       if @job.errors.empty? && @job.save
