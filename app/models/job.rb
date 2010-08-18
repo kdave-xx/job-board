@@ -11,7 +11,7 @@ class Job < ActiveRecord::Base
   has_many :applicants, :through => "application"
 
   validates_presence_of :title, :city, :start_date, :end_date
-  validates_format_of :title, :with => /^[A-Za-z0-9\s]+$/, :unless => Proc.new{|u| u.attributes['title'].blank?}
+  validates_format_of :title, :with => /^[A-Za-z0-9\s&.-]+$/, :unless => Proc.new{|u| u.attributes['title'].blank?}
   validates_format_of :city, :with => /^[A-Za-z0-9\s]+$/, :unless => Proc.new{|u| u.attributes['city'].blank?}
  
 end
