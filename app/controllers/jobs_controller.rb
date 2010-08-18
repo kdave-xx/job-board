@@ -60,11 +60,8 @@ class JobsController < ApplicationController
     
     @job = Job.new(params[:job])
     @job.user_id = current_user.id
-    if @job.start_date > @job.end_date
-      @job.errors.add :end_date, "should not be less than to start_date"
-    end
     respond_to do |format|
-      if @job.errors.empty? && @job.save
+      if @job.save
         format.html { redirect_to(@job, :notice => 'Job was successfully created.') }
         format.xml  { render :xml => @job, :status => :created, :location => @job }
       else
