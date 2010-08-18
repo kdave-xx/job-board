@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :applications
+ 
   map.resources :password_resets, :only => [ :new, :create, :edit, :update ]
 
-  map.resources :jobs
+  map.resources :jobs do |job|
+    job.resources :applications
+  end
   map.resource :user_session
  # map.root :controller => "user_sessions", :action => "new"
   map.resources :users

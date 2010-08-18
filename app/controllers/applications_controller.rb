@@ -3,8 +3,9 @@ class ApplicationsController < ApplicationController
   
   
   def new
+     @job = Job.find(params[:job_id])
      @application = Application.new
-     @job = Job.find(params[:id])
+     
      
       respond_to do |format|
       format.html # new.html.erb
@@ -13,15 +14,15 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-   
-    @application = Application.new(params[:application])
+    @job = Job.find(params[:job_id])
+    @application = @job.applications.build(params[:application])
     @application.user_id = current_user.id
     
     respond_to do |format|
       if @application.save
         @application.deliver_application_instructions!
         @application.deliver_jobowner_instructions!
-        format.html { redirect_to(@application, :notice => 'Application was successfully created.') }
+        format.html { redirect_to(job_application_url(@job, @application), :notice => 'Application was successfully created.') }
         format.xml  { render :xml => @application, :status => :created, :location => @application }
       else
         format.html { render :action => "new" }

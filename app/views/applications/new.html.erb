@@ -1,6 +1,6 @@
 <h1>New application</h1>
 
-<% form_for @application, @job, :html => { :multipart => true } do |f| %>
+<% form_for @application, :url => job_applications_url(@job), :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 <fieldset>
   <legend>Apply For The Job</legend>

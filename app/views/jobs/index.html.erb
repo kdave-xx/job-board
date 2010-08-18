@@ -38,7 +38,7 @@
         <% end %></td>
         <td>
         <% if job.status? %>
-        <%= link_to "Apply", new_application_url(:id => job.id) %>
+        <%= link_to "Apply", new_job_application_url(job) %>
           <% end %>
         </td>
 
