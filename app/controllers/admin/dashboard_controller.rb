@@ -30,7 +30,7 @@ class Admin::DashboardController < ApplicationController
 #    raise @job.inspect
     respond_to do |format|
       if @job.update_attributes(params[:job])
-        format.html { redirect_to(admin_dashboard_index_path, :notice => 'Dashboardb was successfully updated.') }
+        format.html { redirect_to(admin_dashboard_index_path, :notice => 'Dashboard was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -44,7 +44,7 @@ class Admin::DashboardController < ApplicationController
     @dashboard.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_dashboard_index_url) }
+      format.html { redirect_to(admin_dashboard_index_url, :notice => 'Job was successfully deleted.') }
       format.xml  { head :ok }
     end
   end
