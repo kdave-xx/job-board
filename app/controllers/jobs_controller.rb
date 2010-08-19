@@ -19,7 +19,7 @@ class JobsController < ApplicationController
 
 
   def myjobs
-    @jobs = Job.find(:all)
+    @jobs = Job.find_all_by_user_id(current_user)
     @jobs = @jobs.paginate :page => params[:page], :per_page => 10
   end
 
