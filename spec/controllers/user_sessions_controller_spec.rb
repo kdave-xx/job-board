@@ -2,17 +2,21 @@ require 'spec_helper'
 
 describe UserSessionsController do
 
-  #Delete this example and add some real ones
-  it "should use UserSessionsController" do
-    controller.should be_an_instance_of(UserSessionsController)
+  describe "GET 'new'" do
+    before(:each) do
+      activate_authlogic
+      @user_session = Factory.build(:valid_user)
+      UserSession.stubs(:new).returns(@user_session)
+      get :new
+    end
+
+    it {should assign_to :user_session}
+    it {should respond_with :success}
+    it {should render_template :new}
+    it {should render_with_layout :application}
+    it {should_not set_the_flash}
   end
 
-  describe "GET 'new'" do
-    it "should get new page" do
-      get 'new'
-      response.should be_success
-    end
-  end
 
  
 #  describe "responding to POST create" do

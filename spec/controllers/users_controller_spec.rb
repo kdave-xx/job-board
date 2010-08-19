@@ -9,6 +9,8 @@ describe UsersController do
 
   describe "on GET to 'new'" do
     before(:each) do
+      @user = Factory(:valid_user)
+      User.stubs(:new).returns(@user)
       get :new
     end
 
@@ -28,17 +30,22 @@ describe UsersController do
 
     it {should assign_to :user}
     it {should respond_with :redirect}
-    it {should redirect_to("the index page"){jobs_url}}
+    it {should redirect_to("jobs"){jobs_url}}
     it {should set_the_flash.to("Successfully registered!")}
   end
 
   describe "on GET to :show" do
     before(:each) do
+      activate_authlogic
       @user = Factory(:valid_user)
-      UserSession.create(:login => "kalpesh", :password => "123123")
+      UserSession.create(@user.id)
       get :show, :id => @user.id
     end
-
+    it {should assign_to :user}
+    it {should respond_with :success}
+    it {should render_template :show}
+    it {should render_with_layout :application}
+    it {should_not set_the_flash}
 
   end
 

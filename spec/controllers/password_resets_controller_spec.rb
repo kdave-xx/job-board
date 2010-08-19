@@ -2,20 +2,20 @@ require 'spec_helper'
 
 describe PasswordResetsController do
 
-  it "should use PasswordResetsController" do
-    controller.should be_an_instance_of(PasswordResetsController)
-  end
-
-  describe "when not logged in" do
-    before(:each) do
-      get :new
-    end
-
-    it {should respond_with :success }
-    it {should render_template :new}
-    it {should render_with_layout :application }
-    it {should_not set_the_flash}
-  end
+#  it "should use PasswordResetsController" do
+#    controller.should be_an_instance_of(PasswordResetsController)
+#  end
+#
+#  describe "when not logged in" do
+#    before(:each) do
+#      get :new
+#    end
+#
+#    it {should respond_with :success }
+#    it {should render_template :new}
+#    it {should render_with_layout :application }
+#    it {should_not set_the_flash}
+#  end
 
 #  describe "on POST to :create" do
 #    before(:each) do
@@ -32,18 +32,18 @@ describe PasswordResetsController do
 #    it {should set_the_flash.to("Instructions to reset your password have been emailed to you")}
 #  end
 
-  describe "on GET to :edit" do
-    before(:each) do
-       get :edit, :id => Factory(:valid_user).perishable_token
-    end
-
-    it {should assign_to :user}
-    it {should respond_with :success}
-    it {should render_template :edit}
-    it {should render_with_layout :application}
-    it {should_not set_the_flash}
-  end
-
+#  describe "on GET to :edit" do
+#    before(:each) do
+#       get :edit, :id => Factory(:valid_user).perishable_token
+#    end
+#
+#    it {should assign_to :user}
+#    it {should respond_with :success}
+#    it {should render_template :edit}
+#    it {should render_with_layout :application}
+#    it {should_not set_the_flash}
+#  end
+#
 
 #  describe "on PUT to :update" do
 #    before(:each) do
