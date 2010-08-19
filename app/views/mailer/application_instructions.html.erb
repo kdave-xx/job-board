@@ -7,10 +7,22 @@ Thank you for applying for the job on job board system.
 <b>Job Details Goes Below:</b> <br />
 <b>Job Title:</b> &nbsp;<%= @applicant.job.title %><br />
 <b>Description:</b> &nbsp;<%= @applicant.job.description %><br />
-<b>Country:</b> &nbsp;<%= @applicant.job.country.name %><br />
+<b>Country:</b> &nbsp;<% if @applicant.job.country_id.eql?(nil) %>
+  AnyWhere
+  <% else %>
+  <%=h @applicant.job.country.name %>
+  <% end %><br />
 <b>City:</b> &nbsp;<%= @applicant.job.city %><br />
-<b>Type:</b> &nbsp;<%= @applicant.job.type.name %><br />
-<b>Currency:</b> &nbsp;<%= @applicant.job.currency.name %><br />
+<b>Type:</b> &nbsp;<% if @applicant.job.type_id.eql?(nil) %>
+  No Type selected
+  <% else %>
+  <%=h @applicant.job.type.name %>
+  <% end %><br />
+<b>Currency:</b> &nbsp;<% if @applicant.job.currency_id.eql?(nil) %>
+  No Currency selected
+  <% else %>
+  <%=h @applicant.job.currency.name %>
+  <% end %><br />
 <b>Skills:</b> &nbsp;<% @applicant.job.skills.each do |t| %><%= t.name %><% end %><br />
 <b>Start Date:</b> &nbsp;<%= @applicant.job.start_date %><br />
 <b>End Date:</b> &nbsp;<%= @applicant.job.end_date %><br />
