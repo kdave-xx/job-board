@@ -37,8 +37,7 @@ class JobsController < ApplicationController
     @applicants = @job.applications.find(:all)
   end
 
-  # GET /jobs/new
-  # GET /jobs/new.xml
+ 
   def new
     @job = Job.new
     @skills = Skill.find(:all)
@@ -49,13 +48,12 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1/edit
+  
   def edit
     @job = Job.find(params[:id])
   end
 
-  # POST /jobs
-  # POST /jobs.xml
+ 
   def create
     
     @job = Job.new(params[:job])
@@ -72,8 +70,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # PUT /jobs/1
-  # PUT /jobs/1.xml
+  
   def update
     @job = Job.find(params[:id])
 
@@ -90,8 +87,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.xml
+  
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
@@ -103,7 +99,11 @@ class JobsController < ApplicationController
   end
 
   def jobaward
-    @applicant = Application.find_by_id(params[:id])
+    @application = Application.find_by_id(params[:id])
+    @application.deliver_application_selection_instructions!
+    Application.transaction do
+          @application.update_attribute(:award, true)
+   end
   end
 
  

@@ -29,5 +29,22 @@ class Mailer < ActionMailer::Base
     body        :edit_password_reset_url => edit_password_reset_url(user.perishable_token)
   end
 
+   def application_selection_instructions(application)
+    subject       "Job Board Application Selection Instructions"
+    from          "no-reply@fourthmedia.co.uk"
+    recipients    application.email
+    sent_on       Time.now
+    @content_type = "text/html"
+    body          :applicant => application
+   end
+
+   def applications_rejection_instructions(application)
+    subject       "Job Board Application Selection Instructions"
+    from          "no-reply@fourthmedia.co.uk"
+    recipients    application.email
+    sent_on       Time.now
+    @content_type = "text/html"
+    body          :applicant => application
+   end
 
 end

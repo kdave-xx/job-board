@@ -6,7 +6,7 @@ class CreateApplications < ActiveRecord::Migration
       t.text :comment
       t.string :url
       t.string :email
-
+      t.boolean :award, :default => false
 
       t.timestamps
     end

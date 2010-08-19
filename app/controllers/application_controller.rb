@@ -63,7 +63,7 @@ class ApplicationController < ActionController::Base
 
     def change_state(jobs)
      jobs.each do |job|
-      if job.end_date < Date.today
+      if job.end_date < Date.today || check_jobaward(job).eql?(true)
         Job.transaction do
           job.update_attribute(:status, false)
         end
@@ -74,5 +74,14 @@ class ApplicationController < ActionController::Base
       end
     end
     end
+
+     def check_jobaward(job)
+       @applicants = job.applications.all
+       @applicants.each do |app|
+        if app.award.eql?(true)
+           return true
+       end
+     end
+     end
 
 end

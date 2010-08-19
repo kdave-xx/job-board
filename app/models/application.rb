@@ -17,4 +17,8 @@ class Application < ActiveRecord::Base
    def deliver_jobowner_instructions!
      Mailer.deliver_jobowner_instructions(self)
    end
+
+   def deliver_application_selection_instructions!
+    Mailer.deliver_application_selection_instructions(self)
+  end
 end
