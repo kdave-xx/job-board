@@ -13,7 +13,11 @@
 
 <div class="form_row">
   <b>Country:</b>
+  <% if @job.country_id.eql?(nil) %>
+  No Country selected
+  <% else %>
   <%=h @job.country.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
@@ -23,17 +27,29 @@
 
 <div class="form_row">
   <b>Type:</b>
+  <% if @job.type_id.eql?(nil) %>
+  No Type selected
+  <% else %>
   <%=h @job.type.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
   <b>Currency:</b>
+  <% if @job.currency_id.eql?(nil) %>
+  No Currency selected
+  <% else %>
   <%=h @job.currency.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
   <b>Rate:</b>
+  <% if @job.rate_id.eql?(nil) %>
+  No Rate selected
+  <% else %>
   <%=h @job.rate.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
