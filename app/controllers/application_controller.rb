@@ -63,11 +63,16 @@ class ApplicationController < ActionController::Base
 
     def change_state(jobs)
      jobs.each do |job|
-      if Date.today > job.end_date
+      if job.end_date < Date.today
         Job.transaction do
           job.update_attribute(:status, false)
         end
+      else
+        Job.transaction do
+          job.update_attribute(:status, true)
+        end
       end
-  end
-  end
+    end
+    end
+
 end
