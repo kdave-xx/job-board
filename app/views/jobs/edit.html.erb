@@ -16,7 +16,11 @@
   </div>
   <div class="form_row">
     <%= f.label :country %>
+    <% if @job.country_id.eql?(nil) %>
+      <%= f.select(:country_id, Country::NAMES, {:prompt => "Select Country" }) %>
+    <% else %>
      <%= f.select(:country_id, Country::NAMES, {:prompt => "#{@job.country.name}" }) %>
+    <% end %>
   </div>
   <div class="form_row">
     <%= f.label :city %>
@@ -24,15 +28,27 @@
   </div>
   <div class="form_row">
     <%= f.label :type %>
+    <% if @job.type_id.eql?(nil) %>
+      <%= f.select(:type_id, Type::NAMES, {:prompt => "Select Type" }) %>
+    <% else %>
      <%= f.select(:type_id, Type::NAMES, {:prompt => "#{@job.type.name}" }) %>
+    <% end %>
   </div>
   <div class="form_row">
     <%= f.label :currency %>
+    <% if @job.currency_id.eql?(nil) %>
+    <%= f.select(:currency_id, Currency::NAMES, { :prompt => "Select Curency" }) %>
+    <% else %>
     <%= f.select(:currency_id, Currency::NAMES, { :prompt => "#{@job.currency.name}" }) %>
+    <% end %>
   </div>
   <div class="form_row">
     <%= f.label :rate %>
+     <% if @job.rate_id.eql?(nil) %>
+    <%= f.select(:rate_id, Rate::NAMES, { :prompt => "Select Rate" }) %>
+    <% else %>
     <%= f.select(:rate_id, Rate::NAMES, { :prompt => "#{@job.rate.name}" }) %>
+    <% end %>
   </div>
   <div class="form_row">
     <%= f.label :start_date %>&nbsp;
