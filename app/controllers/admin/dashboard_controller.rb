@@ -8,7 +8,7 @@ class Admin::DashboardController < ApplicationController
     else
       @dashboards = Job.find(:all)
     end
-   
+     change_state(@dashboards)
      @dashboards =  @dashboards.paginate :page => params[:page], :per_page => 10
   end
 
@@ -47,5 +47,9 @@ class Admin::DashboardController < ApplicationController
       format.html { redirect_to(admin_dashboard_index_url, :notice => 'Job was successfully deleted.') }
       format.xml  { head :ok }
     end
+  end
+
+  def jobaward
+    
   end
 end
