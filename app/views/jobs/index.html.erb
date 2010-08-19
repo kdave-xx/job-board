@@ -21,11 +21,27 @@
     
     <td><%=h link_to job.title, job %></td>
     <td><%=h job.description %></td>
-    <td><%=h job.country.name %></td>
+    <td><% if job.country_id.eql?(nil) %>
+        No Country selected
+        <% else %>
+          <%=h job.country.name %>
+        <% end %></td>
     <td><%=h job.city %></td>
-    <td><%=h job.type.name %></td>
-    <td><%=h job.currency.name %></td>
-    <td><%=h job.rate.name %></td>
+    <td><% if job.type_id.eql?(nil) %>
+        No Type selected
+        <% else %>
+        <%=h job.type.name %>
+        <% end %></td>
+    <td><% if job.currency_id.eql?(nil) %>
+        No Currency selected
+        <% else %>
+        <%=h job.currency.name %>
+        <% end %></td>
+    <td><% if job.rate_id.eql?(nil) %>
+        No Rate selected
+        <% else %>
+        <%=h job.rate.name %>
+        <% end %></td>
     <td><%=h job.start_date %></td>
     <td><%=h job.end_date %></td>
     <td><% job.skills.each do |t| %>
