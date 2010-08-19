@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   # before_filter :require_no_user, :only => [:index]
-   before_filter :require_user, :only => [:new, :edit, :update, :destroy, :apply, :detail]
+   before_filter :require_user, :only => [:new, :edit, :update, :destroy, :apply, :detail, :jobaward]
    
 
   def index
@@ -100,6 +100,10 @@ class JobsController < ApplicationController
       format.html { redirect_to(jobs_url, :notice => 'Job was successfully deleted.') }
       format.xml  { head :ok }
     end
+  end
+
+  def jobaward
+    @applicant = Application.find_by_id(params[:id])
   end
 
  

@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
  # map.root :controller => "user_sessions", :action => "new"
   map.resources :users
   map.myjobs '/myjobs', :controller => "jobs", :action => "myjobs"
-
+  map.jobaward '/jobaward/:id', :controller => "jobs", :action => "jobaward"
   map.signup '/signup', :controller => "users", :action => "new"
   map.login '/login', :controller => "user_sessions", :action => "new"
   map.admin '/admin', :controller => "user_sessions", :action => "new"
@@ -42,7 +42,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
      admin.resources :dashboard
      #admin.dashboard '/dashboard', :controller => "dashboard", :action => "index"
-
+     admin.jobaward '/dashboard/jobaward/:id', :controller => "dashboard", :action => "jobaward"
   end
   # Sample resource route within a namespace:
      

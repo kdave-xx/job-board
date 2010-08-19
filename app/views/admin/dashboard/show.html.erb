@@ -76,8 +76,11 @@
   <% if @applicants.blank? %>
   <b>There Are No Applicants Applied For This Job Yet.</b>
   <% else %>
+  <table>
   <% @applicants.each do |applicant| %>
-  <br/><br/>
+  
+  <tr>
+    <td>
   <div class="form_row">
     <b>Email:</b>
     <%=h applicant.email %>
@@ -90,8 +93,16 @@
     <b>Linkedin URL:</b>
     <%=h applicant.url %>
   </div>
+    </td>
+    <td>
+      <% if applicant.job.status.eql?(true) %>
+           <%= link_to "Award Job", admin_jobaward_url(applicant) %>
+      <% end %>
+    </td>
+  </tr>
   <% end %>
   <% end %>
+  </table>
   </fieldset>
 
 <%#= link_to 'Edit', edit_job_path(@job) %> |

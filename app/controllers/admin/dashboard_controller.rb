@@ -50,6 +50,7 @@ class Admin::DashboardController < ApplicationController
   end
 
   def jobaward
-    
+    @applicant = Application.find_by_id(params[:id])
+    @job = Job.find_by_id(@applicant.job_id)
   end
 end
