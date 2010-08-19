@@ -13,7 +13,11 @@
 
 <div class="form_row">
   <b>Country:</b>
+  <% if @dashboard.country_id.eql?(nil) %>
+  No Country selected
+  <% else %>
   <%=h @dashboard.country.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
@@ -23,17 +27,29 @@
 
 <div class="form_row">
   <b>Type:</b>
+  <% if @dashboard.type_id.eql?(nil) %>
+  No Type selected
+  <% else %>
   <%=h @dashboard.type.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
   <b>Currency:</b>
+  <% if @dashboardb.currency_id.eql?(nil) %>
+  No Currency selected
+  <% else %>
   <%=h @dashboard.currency.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
   <b>Rate:</b>
+  <% if @dashboard.rate_id.eql?(nil) %>
+  No Rate selected
+  <% else %>
   <%=h @dashboard.rate.name %>
+  <% end %>
 </div>
 
 <div class="form_row">
