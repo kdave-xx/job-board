@@ -36,7 +36,7 @@
 
 <div class="form_row">
   <b>Currency:</b>
-  <% if @dashboardb.currency_id.eql?(nil) %>
+  <% if @dashboard.currency_id.eql?(nil) %>
   No Currency selected
   <% else %>
   <%=h @dashboard.currency.name %>
