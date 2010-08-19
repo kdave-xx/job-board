@@ -50,7 +50,11 @@ class Admin::DashboardController < ApplicationController
   end
 
   def jobaward
-    @applicant = Application.find_by_id(params[:id])
-    @job = Job.find_by_id(@applicant.job_id)
+    @application = Application.find_by_id(params[:id])
+    @application.deliver_application_selection_instructions!
+    @application.deliver_jobowner_selectapplicant_instructions!
+     Application.transaction do
+          @application.update_attribute(:award, true)
+    end
   end
 end

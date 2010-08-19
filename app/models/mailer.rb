@@ -38,13 +38,28 @@ class Mailer < ActionMailer::Base
     body          :applicant => application
    end
 
-   def applications_rejection_instructions(application)
+   def jobowner_selectapplicant_instructions(application)
     subject       "Job Board Application Selection Instructions"
     from          "no-reply@fourthmedia.co.uk"
-    recipients    application.email
+    recipients    application.job.user.email
     sent_on       Time.now
     @content_type = "text/html"
     body          :applicant => application
+   end
+
+   def applications_rejection_instructions(applications)
+    subject       "Job Board Application Selection Instructions"
+    from          "no-reply@fourthmedia.co.uk"
+    recipients    get_recipients(applications)
+    sent_on       Time.now
+    @content_type = "text/html"
+    body          
+   end
+
+   private
+
+   def get_recipients(applications)
+     applications.collect(&:email).join(",")
    end
 
 end
