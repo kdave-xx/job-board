@@ -13,8 +13,8 @@
     <th width="20">Start date</th>
     <th width="20">End date</th>
     <th width="30">Skills</th>
-    <th width="10"></th>
-    <th width="10"></th>
+    <th width="10">Edit</th>
+    <th width="10">Delete</th>
   </tr>
 
 <% @jobs.each do |job| %>
@@ -49,7 +49,7 @@
          <% end %></td>
     
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', job, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
