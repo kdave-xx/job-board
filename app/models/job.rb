@@ -16,7 +16,7 @@ class Job < ActiveRecord::Base
   validate :valid_date
   
   def valid_date
-    errors.add(:end_date, "must greater than start date") if "#{end_date}" < "#{start_date}"
+    errors.add(:end_date, "must be greater than start date or equal to start date") if "#{end_date}" < "#{start_date}"
   end
  
 end
