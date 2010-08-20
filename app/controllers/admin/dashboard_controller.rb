@@ -52,12 +52,13 @@ class Admin::DashboardController < ApplicationController
   def jobaward
     @application = Application.find_by_id(params[:id])
     @job = Job.find_by_id(@application.job_id)
-    @applications = @job.applications.all
-    @application.deliver_application_selection_instructions!
-    @application.deliver_jobowner_selectapplicant_instructions!
-    Application.deliver_applications_rejection_instructions!(@applications)
      Application.transaction do
           @application.update_attribute(:award, true)
     end
+    @applications = @job.applications.all - Application.find_all_by_award(true)
+    @application.deliver_application_selection_instructions!
+    @application.deliver_jobowner_selectapplicant_instructions!
+    Application.deliver_applications_rejection_instructions!(@applications)
+    
   end
 end
