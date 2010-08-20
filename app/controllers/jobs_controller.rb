@@ -5,9 +5,9 @@ class JobsController < ApplicationController
 
   def index
     if current_user
-      @jobs = Job.all - Job.find_all_by_user_id(current_user)
+      @jobs = Job.all - Job.find_all_by_user_id(current_user, :order => sort_order('created_at'))
     else
-         @jobs = Job.find(:all)
+         @jobs = Job.find(:all, :order => sort_order('created_at'))
          
     end
     change_state(@jobs)
@@ -112,6 +112,11 @@ class JobsController < ApplicationController
     if count>0
     Application.deliver_applications_rejection_instructions!(@applications, @job)
     end
+  end
+
+  private
+  def sort_order(default)
+      "#{(params[:c] || default.to_s).gsub(/[\s;'\"]/,'')} #{params[:d] == 'down' ? 'DESC' : 'ASC'}"
   end
 
  
