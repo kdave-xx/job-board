@@ -108,7 +108,7 @@ class JobsController < ApplicationController
     count = @applications.count
     @application.deliver_application_selection_instructions!
     if count>0
-    Application.deliver_applications_rejection_instructions!(@applications)
+    Application.deliver_applications_rejection_instructions!(@applications, @job)
     end
   end
 

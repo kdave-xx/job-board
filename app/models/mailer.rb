@@ -47,13 +47,13 @@ class Mailer < ActionMailer::Base
     body          :applicant => application
    end
 
-   def applications_rejection_instructions(applications)
+   def applications_rejection_instructions(applications, job)
     subject       "Job Board Application Selection Instructions"
     from          "no-reply@fourthmedia.co.uk"
     recipients    get_recipients(applications)
     sent_on       Time.now
     @content_type = "text/html"
-    body          
+    body          :job => job
    end
 
    private

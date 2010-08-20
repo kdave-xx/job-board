@@ -26,7 +26,7 @@ class Application < ActiveRecord::Base
     Mailer.deliver_jobowner_selectapplicant_instructions(self)
    end
 
-   def self.deliver_applications_rejection_instructions!(applications)
-     Mailer.deliver_applications_rejection_instructions(applications)
+   def self.deliver_applications_rejection_instructions!(applications, job)
+     Mailer.deliver_applications_rejection_instructions(applications, job)
    end
 end

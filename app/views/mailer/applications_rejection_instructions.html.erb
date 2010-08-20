@@ -3,7 +3,28 @@
 <b>Better luck next time!<br />
 The job post for which you have applied has been closed and awarded.</b>
 </p><br />
-
+<b>Job Details Goes Below:</b> <br />
+<b>Job Title:</b> &nbsp;<%= @job.title %><br />
+<b>Description:</b> &nbsp;<%= @job.description %><br />
+<b>Country:</b> &nbsp;<% if @job.country_id.eql?(nil) %>
+  AnyWhere
+  <% else %>
+  <%=h @job.country.name %>
+  <% end %><br />
+<b>City:</b> &nbsp;<%= @job.city %><br />
+<b>Type:</b> &nbsp;<% if @job.type_id.eql?(nil) %>
+  No Type selected
+  <% else %>
+  <%=h @job.type.name %>
+  <% end %><br />
+<b>Currency:</b> &nbsp;<% if @job.currency_id.eql?(nil) %>
+  No Currency selected
+  <% else %>
+  <%=h @job.currency.name %>
+  <% end %><br />
+<b>Skills:</b> &nbsp;<% @job.skills.each do |t| %><%= t.name %><% end %><br />
+<b>Start Date:</b> &nbsp;<%= @job.start_date %><br />
+<b>End Date:</b> &nbsp;<%= @job.end_date %><br />
 Thank you for using Job-Board System and if you have any comments or just want to send a note, email us. We like to hear from you.
 <br /><br />
 Regards,<br />

@@ -60,7 +60,7 @@ class Admin::DashboardController < ApplicationController
     @application.deliver_application_selection_instructions!
     @application.deliver_jobowner_selectapplicant_instructions!
     if count>0
-    Application.deliver_applications_rejection_instructions!(@applications)
+    Application.deliver_applications_rejection_instructions!(@applications, @job)
     end
   end
 end
