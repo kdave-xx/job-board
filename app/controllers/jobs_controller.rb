@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     if current_user
       @jobs = Job.all - Job.find_all_by_user_id(current_user)
     else
-      @jobs = Job.find(:all)
+         @jobs = Job.find(:all)
     end
     change_state(@jobs)
     @jobs = @jobs.paginate :page => params[:page], :per_page => 10
@@ -17,7 +17,7 @@ class JobsController < ApplicationController
     end
   end
 
-
+ 
   def myjobs
     @jobs = Job.find_all_by_user_id(current_user)
     @jobs = @jobs.paginate :page => params[:page], :per_page => 10
@@ -105,9 +105,11 @@ class JobsController < ApplicationController
           @application.update_attribute(:award, true)
     end
     @applications = @job.applications.all - Application.find_all_by_award(true)
+    count = @applications.count
     @application.deliver_application_selection_instructions!
+    if count>0
     Application.deliver_applications_rejection_instructions!(@applications)
-     
+    end
   end
 
  
