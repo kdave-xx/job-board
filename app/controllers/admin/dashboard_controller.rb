@@ -5,7 +5,7 @@ class Admin::DashboardController < ApplicationController
   
   def index
     unless params[:search].blank?
-      @dashboards = Job.find_by_solr(params[:search], :order => sort_order).docs
+      @dashboards = Job.find_by_solr(params[:search]).docs
     else
       @dashboards = Job.find(:all, :order => sort_order)
     end

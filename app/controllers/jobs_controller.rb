@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   def index
     unless params[:search].blank?
-      @dashboards = Job.find_by_solr(params[:search], :order => sort_order).docs
+      @dashboards = Job.find_by_solr(params[:search]).docs
     else
      if current_user
       @jobs = Job.all - Job.find_all_by_user_id(current_user)
