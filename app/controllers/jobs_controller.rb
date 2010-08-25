@@ -4,12 +4,14 @@ class JobsController < ApplicationController
    
 
   def index
-    if current_user
+    unless params[:search].blank?
+      @dashboards = Job.find_by_solr(params[:search], :order => sort_order).docs
+    else
+     if current_user
       @jobs = Job.all - Job.find_all_by_user_id(current_user)
-
-   else
-     @jobs = Job.find(:all)
-         
+     else
+      @jobs = Job.find(:all)
+     end
     end
     change_state(@jobs)
     @jobs = @jobs.paginate :page => params[:page], :per_page => 10
