@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
+  include SortableTable::App::Controllers::ApplicationController 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 

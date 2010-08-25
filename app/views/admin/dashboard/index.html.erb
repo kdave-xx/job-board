@@ -12,16 +12,16 @@
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="10">Title</th>
+    <th width="20">Title</th>
     <th width="20">Description</th>
-    <th width="20">Country</th>
+    <%= sortable_table_header :name => "Country",  :sort => "country_id" %>
     <th width="10">City</th>
-    <th width="10">Type</th>
+    <%= sortable_table_header :name => "Type",  :sort => "type_id" %>
     <th width="20">Currency</th>
     <th width="20">Rate</th>
-    <th width="20">Start date</th>
-    <th width="20">End date</th>
-    <th width="30">Skills</th>
+    <%= sortable_table_header :name => "Start Date",  :sort => "start_date" %>
+    <%= sortable_table_header :name => "End Date",  :sort => "end_date" %>
+    <%= sortable_table_header :name => "Skills",  :sort => "skill_ids" %>
     <th width="30">Status</th>
     <th width="10">Edit</th>
     <th width="10">Delete</th>

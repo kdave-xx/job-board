@@ -135,3 +135,12 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+th.ascending a {
+background: url(../images/sort-ascending-arrow.gif) 0% 50% no-repeat;
+padding-left: 15px;
+}
+
+th.descending a {
+background: url(../images/sort-descending-arrow.gif) 0% 50% no-repeat;
+padding-left: 15px;
+}

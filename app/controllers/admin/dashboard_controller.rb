@@ -1,12 +1,13 @@
 class Admin::DashboardController < ApplicationController
   before_filter :require_admin_user
   layout 'admin'
- 
+  sortable_attributes :country_id, :type_id, :skill_ids, :start_date, :end_date
+  
   def index
     unless params[:search].blank?
-      @dashboards = Job.find_by_solr(params[:search]).docs
+      @dashboards = Job.find_by_solr(params[:search], :order => sort_order).docs
     else
-      @dashboards = Job.find(:all)
+      @dashboards = Job.find(:all, :order => sort_order)
     end
      change_state(@dashboards)
      @dashboards =  @dashboards.paginate :page => params[:page], :per_page => 10

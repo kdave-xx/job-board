@@ -6,8 +6,9 @@ class JobsController < ApplicationController
   def index
     if current_user
       @jobs = Job.all - Job.find_all_by_user_id(current_user)
-    else
-         @jobs = Job.find(:all)
+
+   else
+     @jobs = Job.find(:all)
          
     end
     change_state(@jobs)
